@@ -1,0 +1,49 @@
+﻿<Window x:Class="Desktopowa.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Desktopowa"
+        mc:Ignorable="d"
+        Title="Nadaj Przesyłkę, PESEL: 00000000000" Height="400" Width="600">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <GroupBox Header="Rodzaj przesyłki" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Margin="0,0,10,0">
+            <StackPanel>
+                <RadioButton GroupName="RB" Name="PocztowkaRB" Content="Pocztówka" IsChecked="True"></RadioButton>
+                <RadioButton GroupName="RB" Name="ListRB" Content="List"></RadioButton>
+                <RadioButton GroupName="RB" Name="PaczkaRB" Content="Paczka"></RadioButton>
+            </StackPanel>
+        </GroupBox>
+
+        <StackPanel Grid.Row="0" Grid.Column="1" Grid.RowSpan="3">
+            <Label Content="Ulica z numerem"></Label>
+            <TextBox x:Name="UlicaTextBox"></TextBox>
+            <Label Content="Kod pocztowy"></Label>
+            <TextBox x:Name="PocztowyTextBox"></TextBox>
+            <Label Content="Miasto"></Label>
+            <TextBox x:Name="MiastoTextBox"></TextBox>
+        </StackPanel>
+
+        <Button Content="Sprawdź Cenę" Grid.Row="3" Grid.Column="0" Click="Button_Click" ></Button>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="0">
+            <Image x:Name="Obraz" Source="/pocztowka.png" ></Image>
+            <TextBlock x:Name="Tekst" FontWeight="Bold" FontSize="16"></TextBlock>
+        </StackPanel>
+
+        <Button Content="Zatwierdź" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Height="20" Click="Button_Click_1"></Button>
+    </Grid>
+</Window>
